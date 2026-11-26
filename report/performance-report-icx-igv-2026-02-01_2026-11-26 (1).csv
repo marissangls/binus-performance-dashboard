@@ -1,8 +1,0 @@
-lc,programme,period_start,period_end,data_source,phase,ppl_unique_people_or_open_count,unit,apl_applications,pct_of_previous_phase,conversion_applied_to_realized,generated_at
-AIESEC in BINUS,iCX (iGV),2026-02-01,2026-11-26,snapshot (single query),Open,35,openings,,,,2026-11-26T16:26:33.700Z
-AIESEC in BINUS,iCX (iGV),2026-02-01,2026-11-26,snapshot (single query),Applied,45,people,45,,,2026-11-26T16:26:33.700Z
-AIESEC in BINUS,iCX (iGV),2026-02-01,2026-11-26,snapshot (single query),Accepted,14,people,14,31.1%,,2026-11-26T16:26:33.700Z
-AIESEC in BINUS,iCX (iGV),2026-02-01,2026-11-26,snapshot (single query),Approved,10,people,10,71.4%,,2026-11-26T16:26:33.700Z
-AIESEC in BINUS,iCX (iGV),2026-02-01,2026-11-26,snapshot (single query),Realized,11,people,11,110.0%,24.4%,2026-11-26T16:26:33.700Z
-AIESEC in BINUS,iCX (iGV),2026-02-01,2026-11-26,snapshot (single query),Finished,11,people,11,100.0%,,2026-11-26T16:26:33.700Z
-AIESEC in BINUS,iCX (iGV),2026-02-01,2026-11-26,snapshot (single query),Completed,8,people,8,72.7%,,2026-11-26T16:26:33.700Z
