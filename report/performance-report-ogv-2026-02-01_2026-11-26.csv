@@ -1,0 +1,8 @@
+lc,programme,period_start,period_end,data_source,phase,ppl_unique_people_or_open_count,unit,apl_applications,pct_of_previous_phase,conversion_applied_to_realized,generated_at
+AIESEC in BINUS,oGV,2026-02-01,2026-11-26,snapshot (single query),Open,323,sign-ups,,,,2026-11-26T16:26:36.629Z
+AIESEC in BINUS,oGV,2026-02-01,2026-11-26,snapshot (single query),Applied,44,people,129,13.6%,,2026-11-26T16:26:36.629Z
+AIESEC in BINUS,oGV,2026-02-01,2026-11-26,snapshot (single query),Accepted,15,people,17,34.1%,,2026-11-26T16:26:36.629Z
+AIESEC in BINUS,oGV,2026-02-01,2026-11-26,snapshot (single query),Approved,11,people,11,73.3%,,2026-11-26T16:26:36.629Z
+AIESEC in BINUS,oGV,2026-02-01,2026-11-26,snapshot (single query),Realized,10,people,10,90.9%,22.7%,2026-11-26T16:26:36.629Z
+AIESEC in BINUS,oGV,2026-02-01,2026-11-26,snapshot (single query),Finished,12,people,12,120.0%,,2026-11-26T16:26:36.629Z
+AIESEC in BINUS,oGV,2026-02-01,2026-11-26,snapshot (single query),Completed,7,people,7,58.3%,,2026-11-26T16:26:36.629Z
