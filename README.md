@@ -42,8 +42,6 @@ Copy `.env.example` to `.env.local` to change the settings. Never commit `.env.l
 
 ## How it works
 
-![Connection to EXPA](docs/architecture.png)
-
 The page asks `/api/stats` for the numbers. The server function reads them from the EXPA Analytics API (live mode) or from `fixtures/` (mock mode) and returns them as JSON. The EXPA token stays on the server as an environment variable and is never sent to the browser.
 
 ## Updating the data
