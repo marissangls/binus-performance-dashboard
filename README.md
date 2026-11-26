@@ -2,7 +2,7 @@
 
 A one-page dashboard that shows the performance of AIESEC in BINUS for oGX and iCX: the number of people in each phase (Open to Completed) and the conversion rates, for any date range.
 
-**Live demo:** 
+**Live demo:** https://binus-performance-dashboard.vercel.app/
 
 ## Features
 
