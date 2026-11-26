@@ -1,0 +1,849 @@
+{
+  "start_date": "2026-02-01",
+  "end_date": "2026-11-26",
+  "response": {
+    "o_matched_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_realized_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_realized_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_matched_9": {
+      "doc_count": 1,
+      "applicants": {
+        "value": 1
+      }
+    },
+    "o_matched_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_matched_7": {
+      "doc_count": 23,
+      "applicants": {
+        "value": 18
+      }
+    },
+    "i_realized_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_realized_7": {
+      "doc_count": 11,
+      "applicants": {
+        "value": 11
+      }
+    },
+    "i_realized_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_an_accepted_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_matched_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_an_accepted_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_matched_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_an_accepted_7": {
+      "doc_count": 17,
+      "applicants": {
+        "value": 15
+      }
+    },
+    "i_realized_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_approval_broken_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_approval_broken_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_approval_broken_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_approval_broken_7": {
+      "doc_count": 5,
+      "applicants": {
+        "value": 5
+      }
+    },
+    "o_approval_broken_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_approval_broken_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_finished_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_finished_7": {
+      "doc_count": 11,
+      "applicants": {
+        "value": 11
+      }
+    },
+    "i_finished_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_realized_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_matched_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_realized_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_matched_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_realized_7": {
+      "doc_count": 10,
+      "applicants": {
+        "value": 10
+      }
+    },
+    "i_matched_7": {
+      "doc_count": 23,
+      "applicants": {
+        "value": 23
+      }
+    },
+    "o_realized_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_matched_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_realized_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_matched_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_realized_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_matched_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_an_accepted_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_an_accepted_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_an_accepted_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_approved_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_approved_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_finished_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_finished_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_finished_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_remote_realized_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_remote_realized_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_remote_realized_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_remote_realized_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_remote_realized_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_remote_realized_7": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_approval_broken_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_approval_broken_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_an_accepted_7": {
+      "doc_count": 14,
+      "applicants": {
+        "value": 14
+      }
+    },
+    "i_approval_broken_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_approval_broken_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_an_accepted_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_approval_broken_7": {
+      "doc_count": 4,
+      "applicants": {
+        "value": 4
+      }
+    },
+    "i_approval_broken_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_an_accepted_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_an_accepted_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_an_accepted_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_approved_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_an_accepted_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_realization_broken_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_realization_broken_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_realization_broken_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_realization_broken_7": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_realization_broken_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_realization_broken_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_approved_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_approved_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_approved_7": {
+      "doc_count": 11,
+      "applicants": {
+        "value": 11
+      }
+    },
+    "o_approved_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_realization_broken_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_completed_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_realization_broken_7": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_realization_broken_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_realization_broken_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_realization_broken_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_applied_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_completed_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_completed_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_completed_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_completed_7": {
+      "doc_count": 8,
+      "applicants": {
+        "value": 8
+      }
+    },
+    "o_completed_7": {
+      "doc_count": 7,
+      "applicants": {
+        "value": 7
+      }
+    },
+    "o_completed_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_completed_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_completed_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_completed_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_realization_broken_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_completed_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_completed_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_applied_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_applied_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_approved_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_applied_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_approved_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_applied_7": {
+      "doc_count": 45,
+      "applicants": {
+        "value": 45
+      }
+    },
+    "i_approved_7": {
+      "doc_count": 10,
+      "applicants": {
+        "value": 10
+      }
+    },
+    "i_applied_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_approved_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_applied_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_approved_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_remote_realized_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_remote_realized_8": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_remote_realized_7": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_finished_9": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_finished_8": {
+      "doc_count": 1,
+      "applicants": {
+        "value": 1
+      }
+    },
+    "o_finished_7": {
+      "doc_count": 12,
+      "applicants": {
+        "value": 12
+      }
+    },
+    "o_finished_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_remote_realized_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_applied_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_finished_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_finished_1": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_applied_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "i_remote_realized_5": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_applied_7": {
+      "doc_count": 129,
+      "applicants": {
+        "value": 44
+      }
+    },
+    "o_applied_8": {
+      "doc_count": 220,
+      "applicants": {
+        "value": 76
+      }
+    },
+    "i_remote_realized_2": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "o_applied_9": {
+      "doc_count": 35,
+      "applicants": {
+        "value": 7
+      }
+    },
+    "open_ogx": {
+      "doc_count": 687
+    },
+    "open_o_programme_1": {
+      "doc_count": 0
+    },
+    "open_o_programme_2": {
+      "doc_count": 0
+    },
+    "open_o_programme_5": {
+      "doc_count": 0
+    },
+    "open_o_programme_7": {
+      "doc_count": 323
+    },
+    "open_o_programme_8": {
+      "doc_count": 160
+    },
+    "open_o_programme_9": {
+      "doc_count": 4
+    },
+    "open_icx": {
+      "doc_count": 2,
+      "total_openings": {
+        "value": 35
+      }
+    },
+    "open_i_programme_1": {
+      "doc_count": 0,
+      "total_openings": {
+        "value": 0
+      }
+    },
+    "open_i_programme_2": {
+      "doc_count": 0,
+      "total_openings": {
+        "value": 0
+      }
+    },
+    "open_i_programme_5": {
+      "doc_count": 0,
+      "total_openings": {
+        "value": 0
+      }
+    },
+    "open_i_programme_7": {
+      "doc_count": 2,
+      "total_openings": {
+        "value": 35
+      }
+    },
+    "open_i_programme_8": {
+      "doc_count": 0,
+      "total_openings": {
+        "value": 0
+      }
+    },
+    "open_i_programme_9": {
+      "doc_count": 0,
+      "total_openings": {
+        "value": 0
+      }
+    },
+    "applied_total": {
+      "doc_count": 429,
+      "applicants": {
+        "value": 172
+      }
+    },
+    "matched_total": {
+      "doc_count": 47,
+      "applicants": {
+        "value": 42
+      }
+    },
+    "an_accepted_total": {
+      "doc_count": 31,
+      "applicants": {
+        "value": 29
+      }
+    },
+    "approved_total": {
+      "doc_count": 21,
+      "applicants": {
+        "value": 21
+      }
+    },
+    "realized_total": {
+      "doc_count": 21,
+      "applicants": {
+        "value": 21
+      }
+    },
+    "approval_broken_total": {
+      "doc_count": 9,
+      "applicants": {
+        "value": 9
+      }
+    },
+    "realization_broken_total": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "remote_realized_total": {
+      "doc_count": 0,
+      "applicants": {
+        "value": 0
+      }
+    },
+    "finished_total": {
+      "doc_count": 24,
+      "applicants": {
+        "value": 24
+      }
+    },
+    "completed_total": {
+      "doc_count": 15,
+      "applicants": {
+        "value": 15
+      }
+    }
+  }
+}

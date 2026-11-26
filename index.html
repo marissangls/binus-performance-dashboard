@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIESEC in BINUS | Performance dashboard</title>
+<style>
+  :root {
+    color-scheme: light;
+    --surface-page: #ffffff;
+    --surface-1: #ffffff;
+    --surface-2: #f7f8fa;
+    --border: #e3e6ea;
+    --text-primary: #1f2430;
+    --text-secondary: #7b8290;
+    --grid: #eef1f4;
+    --series-1: #257de0;
+    --brand: #037ef3;
+    --brand-ink: #ffffff;
+    --warn-bg: #fff6e0;
+    --warn-text: #6b4a00;
+    --err-bg: #fdecec;
+    --err-text: #8a1f1f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --surface-page: #111214;
+      --surface-1: #191919;
+      --surface-2: #1e2023;
+      --border: #2c2f33;
+      --text-primary: #efefef;
+      --text-secondary: #9c9c9c;
+      --grid: #25282c;
+      --series-1: #338ced;
+      --brand: #2a8cf5;
+      --warn-bg: #2b2410;
+      --warn-text: #f0d48a;
+      --err-bg: #2d1717;
+      --err-text: #f2b3b3;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--surface-page); color: var(--text-primary); line-height: 1.45; }
+  .app { display: grid; grid-template-columns: 72px 232px minmax(0, 1fr); min-height: 100vh; }
+  .rail { background: var(--brand); display: flex; flex-direction: column; align-items: center; padding-top: 20px; }
+  .rail .logo { width: 46px; height: 46px; border-radius: 8px; background: #fff; display: grid; place-items: center; }
+  .side { border-right: 1px solid var(--border); padding: 28px 16px; background: var(--surface-1); }
+  .side-title { font-size: 26px; font-weight: 600; margin: 0 0 24px; padding-left: 4px; }
+  .side-group { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--text-secondary); margin: 18px 0 6px 4px; }
+  .nav { display: block; width: 100%; text-align: left; font: inherit; font-size: 15px; padding: 11px 14px; margin-bottom: 4px; border: 0; border-radius: 6px; background: transparent; color: var(--text-primary); cursor: pointer; }
+  .nav:hover { background: var(--grid); }
+  .nav[aria-pressed=true] { background: var(--brand); color: var(--brand-ink); }
+  .content { min-width: 0; }
+  .topbar { height: 60px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+  .crumbs { font-size: 15px; color: var(--text-secondary); }
+  .crumbs i { font-style: normal; margin: 0 10px; }
+  .crumbs b { color: var(--text-primary); font-weight: 600; }
+  main { padding: 24px 32px 56px; max-width: 1180px; }
+  h1 { font-size: 20px; margin: 0 0 4px; font-weight: 600; }
+  .sub { color: var(--text-secondary); font-size: 14px; margin: 0 0 16px; }
+  .banner { border-radius: 8px; padding: 10px 12px; font-size: 13px; margin-bottom: 12px; }
+  .banner.snap { background: var(--warn-bg); color: var(--warn-text); }
+  .banner.err { background: var(--err-bg); color: var(--err-text); }
+  .banner[hidden] { display: none; }
+  .panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 24px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+  .field { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--text-secondary); }
+  input[type=date] { font: inherit; font-size: 14px; padding: 7px 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface-1); color: var(--text-primary); }
+  .btn { font: inherit; font-size: 14px; padding: 8px 14px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface-1); color: var(--text-primary); cursor: pointer; }
+  .btn:hover { border-color: var(--brand); }
+  .btn.primary { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+  .spacer { flex: 1; }
+  :focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+  .sect h2 { font-size: 20px; font-weight: 600; margin: 0 0 2px; }
+  .sect p.d { font-size: 14px; color: var(--text-secondary); margin: 0 0 14px; }
+  .sect { margin-bottom: 36px; }
+  .tbl-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; background: var(--surface-1); }
+  .tbl-wrap table { min-width: 640px; }
+  .tbl-wrap th, .tbl-wrap td { border-right: 1px solid var(--border); padding: 12px 16px; }
+  .tbl-wrap th:last-child, .tbl-wrap td:last-child { border-right: 0; }
+  .tbl-wrap thead th { text-align: center; font-size: 15px; font-weight: 600; color: var(--text-primary); background: var(--surface-1); vertical-align: bottom; }
+  .tbl-wrap thead th small { display: block; font-weight: 400; font-size: 13px; color: var(--text-secondary); margin-top: 6px; }
+  .tbl-wrap thead th:first-child, .tbl-wrap tbody td:first-child { text-align: left; }
+  .tbl-wrap tbody td { font-size: 16px; text-align: right; }
+  .tbl-wrap tbody td:first-child { font-weight: 500; font-size: 15px; }
+  .tbl-wrap tbody tr:last-child td { border-bottom: 0; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .kpi { border: 1px solid var(--border); border-radius: 8px; padding: 12px; background: var(--surface-1); }
+  .kpi .lab { font-size: 12px; color: var(--text-secondary); }
+  .kpi .val { font-size: 28px; font-weight: 600; line-height: 1.2; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  h2 { font-size: 15px; margin: 0 0 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+  th, td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--text-secondary); font-weight: 600; }
+  .foot { font-size: 12px; color: var(--text-secondary); }
+  .foot li { margin-bottom: 4px; }
+  [hidden] { display: none !important; }
+  @media (max-width: 860px) {
+    .app { grid-template-columns: 1fr; }
+    .rail { display: none; }
+    .side { border-right: 0; border-bottom: 1px solid var(--border); padding: 14px 16px; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+    .side-title { width: 100%; font-size: 20px; margin: 0 0 6px; }
+    .side-group { margin: 0 4px 0 0; }
+    .nav { width: auto; margin: 0; padding: 7px 14px; }
+    #prodField { display: contents; }
+    main { padding: 20px 16px 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="rail" aria-hidden="true">
+    <div class="logo">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#037ef3" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+    </div>
+  </div>
+  <nav class="side" aria-label="Analytics">
+    <p class="side-title">Analytics</p>
+    <div class="side-group">Programme</div>
+    <button type="button" class="nav" id="btnOgx" aria-pressed="true">oGX</button>
+    <button type="button" class="nav" id="btnIcx" aria-pressed="false">iCX</button>
+    <div id="prodField">
+      <div class="side-group">Product (oGX)</div>
+      <button type="button" class="nav" data-p="all" aria-pressed="true">All</button>
+      <button type="button" class="nav" data-p="gv" aria-pressed="false">oGV</button>
+      <button type="button" class="nav" data-p="gta" aria-pressed="false">oGTa</button>
+    </div>
+  </nav>
+  <div class="content">
+    <header class="topbar">
+      <div class="crumbs">Dashboard<i>&rsaquo;</i>Analytics<i>&rsaquo;</i><b>funnel</b></div>
+    </header>
+    <main>
+      <h1 id="title">AIESEC in BINUS | Performance dashboard</h1>
+      <p class="sub" id="sub">Funnel per phase for oGX and iCX</p>
+
+      <div class="banner snap" id="modeBanner" hidden></div>
+      <div class="banner err" id="errBanner" role="alert" hidden></div>
+
+      <section class="panel" aria-label="Filters">
+        <div class="controls">
+          <label class="field">Start date<input type="date" id="start"></label>
+          <label class="field">End date<input type="date" id="end"></label>
+          <span class="spacer"></span>
+          <button type="button" class="btn primary" id="exportBtn">Export report (CSV)</button>
+        </div>
+      </section>
+
+      <section class="sect" aria-label="Funnel">
+        <h2>Funnel</h2>
+        <p class="d">Showing the funnel stats of the selected entity for the specified time period.</p>
+        <div class="tbl-wrap" id="funnelTbl"></div>
+      </section>
+
+      <section class="sect" aria-label="Conversion">
+        <h2>Conversion</h2>
+        <p class="d">Showing the conversion rates for the selected entity for the specified time period. Each rate is a phase divided by the phase before it.</p>
+        <div class="tbl-wrap" id="convTbl"></div>
+      </section>
+
+      <section class="panel" aria-label="Headline numbers">
+        <div class="kpis" id="kpis"></div>
+      </section>
+
+
+    </main>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var state = { entity: "ogx", product: "all", data: null, timer: null };
+  var PROD_NAME = { all: "oGX", gv: "oGV", gta: "oGTa" };
+  function progLabel(entity, product) { return entity === "icx" ? "iCX (iGV)" : PROD_NAME[product] || "oGX"; }
+  var $ = function (id) { return document.getElementById(id); };
+  var fmt = new Intl.NumberFormat("en-US");
+
+  function today() { var d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+  $("start").value = "2026-02-01";
+  $("end").value = today();
+
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function pct(x) { return x == null ? "n/a" : (x * 100).toFixed(1) + "%"; }
+
+  function load() {
+    var s = $("start").value, e = $("end").value;
+    var err = $("errBanner");
+    if (!s || !e) return;
+    if (s > e) { err.textContent = "Start date must not be after end date."; err.hidden = false; return; }
+    err.hidden = true;
+    fetch("/api/stats?entity=" + state.entity + "&product=" + state.product + "&start=" + s + "&end=" + e)
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.j.error || "Request failed");
+        state.data = r.j; render();
+      })
+      .catch(function (ex) {
+        state.data = null;
+        err.textContent = ex.message + (/401|token/i.test(ex.message) ? " (the access token may have expired)" : "");
+        err.hidden = false;
+        $("kpis").innerHTML = "";
+      });
+  }
+
+  function find(d, key) { return d.stages.filter(function (s) { return s.key === key; })[0]; }
+
+  function render() {
+    var d = state.data, label = progLabel(d.entity, d.product);
+    var applied = find(d, "applied"), realized = find(d, "realized"), open = find(d, "open");
+
+    var banner = $("modeBanner");
+    if (d.mode === "mock") {
+      banner.hidden = false;
+      banner.textContent = "Data snapshot, " + d.effective.start + " to " + d.effective.end + "." + (d.exact ? "" : d.granularity === "day" ? " Approximate: unique people are added up per day, so someone active on two days counts twice. A single day, a whole month or the whole period is exact." : " Approximate: the range is rounded to whole months. Select the whole period for exact figures.");
+    } else {
+      banner.hidden = true;
+    }
+    var approx = d.mode === "mock" && !d.exact;
+
+    var openLab = d.entity === "icx" ? "Open (openings)" : "Open (sign-ups)";
+    $("kpis").innerHTML =
+      kpi("Conversion (Applied to Realized)", (approx ? "~" : "") + pct(d.conversion.rate)) +
+      (d.entity === "ogx" ? kpi("Sign-up to Applied", pct(applied.stepRate)) : "") +
+      kpi(openLab, fmt.format(open.value)) +
+      kpi("Applied", fmt.format(applied.value)) +
+      kpi("Realized", fmt.format(realized.value));
+
+    var lcShort = ($("title").getAttribute("data-lc") || "AIESEC in BINUS").replace(/^AIESEC in /, "");
+    var ent = esc(lcShort) + " \u00b7 " + label;
+    var fh = '<th>Entity</th>' + d.stages.map(function (s) { return "<th>" + s.label + "<small>(" + (s.key === "open" ? s.unit : "PPL") + ")</small></th>"; }).join("");
+    var fPpl = '<td>' + ent + '</td>' + d.stages.map(function (s) { return "<td>" + fmt.format(s.value) + "</td>"; }).join("");
+    var fApl = '<td>' + ent + ' (APL)</td>' + d.stages.map(function (s) { return "<td>" + (s.key !== "open" && s.applications != null ? fmt.format(s.applications) : "n/a") + "</td>"; }).join("");
+    $("funnelTbl").innerHTML = "<table><thead><tr>" + fh + "</tr></thead><tbody><tr>" + fPpl + "</tr><tr>" + fApl + "</tr></tbody></table>";
+    var steps = d.stages.slice(1);
+    var ch = '<th>Entity</th>' + steps.map(function (s, i) { return "<th>" + d.stages[i].label + " &rarr; " + s.label + "</th>"; }).join("") + "<th>Applied &rarr; Realized</th>";
+    var cv = '<td>' + ent + '</td>' + steps.map(function (s) { return "<td>" + (s.stepRate == null ? "n/a" : pct(s.stepRate) + (s.stepRate > 1 ? ' <span title="Above 100%: counted per event in the period, not per cohort">*</span>' : "")) + "</td>"; }).join("") + "<td>" + (approx ? "~" : "") + pct(d.conversion.rate) + "</td>";
+    $("convTbl").innerHTML = "<table><thead><tr>" + ch + "</tr></thead><tbody><tr>" + cv + "</tr></tbody></table>";
+
+  }
+
+  function kpi(lab, val) { return '<div class="kpi"><div class="lab">' + lab + '</div><div class="val">' + val + "</div></div>"; }
+
+  function setEntity(e) {
+    state.entity = e;
+    $("btnOgx").setAttribute("aria-pressed", String(e === "ogx"));
+    $("btnIcx").setAttribute("aria-pressed", String(e === "icx"));
+    $("prodField").hidden = e === "icx";
+    load();
+  }
+  $("btnOgx").addEventListener("click", function () { setEntity("ogx"); });
+  $("btnIcx").addEventListener("click", function () { setEntity("icx"); });
+  Array.prototype.forEach.call($("prodField").querySelectorAll("button"), function (b) {
+    b.addEventListener("click", function () {
+      state.product = b.getAttribute("data-p");
+      Array.prototype.forEach.call($("prodField").querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      load();
+    });
+  });
+  ["start", "end"].forEach(function (id) {
+    $(id).addEventListener("change", function () { clearTimeout(state.timer); state.timer = setTimeout(load, 250); });
+  });
+  function csvCell(v) { v = String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
+  $("exportBtn").addEventListener("click", function () {
+    var d = state.data;
+    if (!d) { alert("Nothing to export yet."); return; }
+    var conv = d.conversion.rate == null ? "" : (d.conversion.rate * 100).toFixed(1) + "%";
+    var head = ["lc", "programme", "period_start", "period_end", "data_source", "phase", "ppl_unique_people_or_open_count", "unit", "apl_applications", "pct_of_previous_phase", "conversion_applied_to_realized", "generated_at"];
+    var lc = $("title").getAttribute("data-lc") || "AIESEC in BINUS";
+    var now = new Date().toISOString();
+    var lines = [head.join(",")].concat(d.stages.map(function (s) {
+      return [lc, progLabel(d.entity, d.product), d.effective.start, d.effective.end, d.mode === "mock" ? (d.exact ? "snapshot (single query)" : "snapshot (monthly sum, approximate)") : "live", s.label, s.value, s.key === "open" ? s.unit : "people", s.applications != null ? s.applications : "", s.stepRate == null ? "" : (s.stepRate * 100).toFixed(1) + "%", s.key === "realized" ? conv : "", now].map(csvCell).join(",");
+    }));
+    var blob = new Blob([lines.join("\n") + "\n"], { type: "text/csv;charset=utf-8" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "performance-report-" + progLabel(d.entity, d.product).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-$/, "") + "-" + d.effective.start + "_" + d.effective.end + ".csv";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  });
+
+  fetch("/api/me").then(function (r) { return r.json(); }).then(function (m) {
+    if (m && m.lc_name) {
+      $("title").textContent = m.lc_name + " | Performance dashboard";
+      $("title").setAttribute("data-lc", m.lc_name);
+      document.title = m.lc_name + " | Performance dashboard";
+      $("sub").textContent = "Funnel per phase for oGX and iCX (office ID " + m.lc_id + (m.source === "graphql" ? ", read from the GraphQL API" : "") + ")";
+    }
+  }).catch(function () {});
+
+  load();
+})();
+</script>
+</body>
+</html>

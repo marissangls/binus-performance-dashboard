@@ -1,0 +1,11 @@
+{
+  "name": "binus-performance-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Performance dashboard prototype for AIESEC in BINUS (oGX and iCX funnel)",
+  "scripts": {
+    "dev": "node dev-server.js",
+    "start": "node dev-server.js"
+  },
+  "engines": { "node": ">=18" }
+}
